@@ -28,5 +28,5 @@ Fusion of 1 RGB with multiple IR images are supported, just add the glob pattern
 
 #### Grayscale and RGB image fusion
 
-![Something went wrong, please refer to Demo.ipynb or main.py](/Users/bsun/repos/Guided-VGG-fusion/docs/combined.png)
+![Something went wrong, please refer to Demo.ipynb or main.py](docs/combined.png)
 
