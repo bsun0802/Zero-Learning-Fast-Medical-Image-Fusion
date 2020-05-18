@@ -30,3 +30,14 @@ Fusion of 1 RGB with multiple IR images are supported, just add the glob pattern
 
 ![Something went wrong, please refer to Demo.ipynb or main.py](docs/combined.png)
 
+
+
+
+
+## License
+This project is licensed under the MIT License.
+
+[MIT](./LICENSE) &copy; bsun
+
+
+
