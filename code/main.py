@@ -17,8 +17,8 @@ from metrics import *
 def parse_args():
     '''Usage:
         python main.py --imagePath=../images/IV_images --imageSource "VIS*.png" "IR*.png"
-        python main.py --imagePath=../images/MRI-SPECT --imageSource "MRI*.png" "SPECT*.png"
         python main.py --imagePath=../images/MRI-PET --imageSource "MRI*.png" "PET*.png"
+        # python main.py --imagePath=../images/MRI-SPECT --imageSource "MRI*.png" "SPECT*.png"
     '''
     parser = argparse.ArgumentParser(description='Image Fusion with guided filter and vgg19')
     parser.add_argument('--imagePath', required=True)
@@ -92,7 +92,7 @@ if __name__ == '__main__':
         name = ''.join(x for x in bundle[0].name if x.isdigit())
         save_image(fused_u8, Args.resultPath.joinpath(f'FUSED-{name}.png'))
 
-        nested_list.append(grid_row(*imgs, fused_u8, resized=Args.grid_cell_size))
+        nested_list.append(grid_row(*imgs, fused_u8, resized=(512, 512)))
 
         if len([x for x in CbCrs_f if x is not None]) == 0:
             print('Evaluation..')
@@ -114,5 +114,8 @@ if __name__ == '__main__':
 
             print('Done!\n')
 
-    grid = make_grid(nested_list, Args.grid_cell_size, addText=True)
-    save_image(grid, Args.resultPath.joinpath('combined.pdf'))
+    # grid = make_grid(nested_list, Args.grid_cell_size, addText=True)
+    # save_image(grid, Args.resultPath.joinpath('combined.png'))
+
+    grid = make_grid(nested_list[:5], (512, 512), addText=True)
+    save_image(grid, Args.resultPath.joinpath('combined.png'))
