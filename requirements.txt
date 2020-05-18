@@ -2,3 +2,8 @@ torch
 torchvision
 numpy
 opencv
+opencv-contrib-python
+scikit-image
+pytorch-msssim
+scipy
+pillow
